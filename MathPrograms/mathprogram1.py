@@ -1,3 +1,14 @@
+'''
+Created by: Steven
+Program: mathprogram1.py
+
+This is a math program that asks the user to add a certain
+number of hundreds, tens, and ones.  The questions come in sets
+of 5, and one points is awarded to the user for each correct
+answer on the first try.  The user must get a question correct
+to continue!
+'''
+
 import random
 
 points = 0
@@ -9,7 +20,7 @@ numberOnes = 0
 
 def generateNumbers():
 	global numberHundreds, numberTens, numberOnes
-	numberHundreds = random.randint(1, 10)
+	numberHundreds = random.randint(1, 9)
 	numberTens = random.randint(1, 20)
 	numberOnes = random.randint(1, 100)
 
@@ -54,6 +65,4 @@ while True:
 
 score = points / questionsAnswered
 print("Your score is:", str(score))
-	
-				
-			
+print("You answered", str(questionsAnswered),"and got", str(points),"questions correct the first time for you score!")
