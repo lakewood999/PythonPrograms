@@ -1,0 +1,43 @@
+import turtle
+
+turtle = turtle.Turtle()
+turtle.ht()
+turtle.shape("turtle")
+turtle.speed(0)
+
+turtle.penup()
+
+#########################
+# Variables             #
+#########################
+MOD = 12
+
+#Equation calculator
+def equation(x):
+  equation = (x + 7) % MOD # Input equation here
+  return equation
+
+turtle.goto(50,-200)
+turtle.pendown()
+turtle.circle(200)
+turtle.penup()
+
+############################
+# Number Table Information #
+############################
+turtle.goto(-350, 285)
+turtle.write(("x" + "  |  " + "y"), False, "left", ("Courier", 16, "normal"))
+turtle.goto(-350, 281)
+turtle.write(("___|___"), False, "left", ("Courier", 16, "normal"))
+
+for x in range(MOD):
+  turtle.goto(-350, 262-x*18)
+  
+  if len(str(x)) == 1:
+    string = str(x) + "  |  " + str(equation(x))
+  elif len(str(x)) == 2:
+    string = str(x) + " |  " + str(equation(x))
+  
+  turtle.write(str(string), False, "left", ("Courier", 16, "normal"))
+
+turtle.done()
